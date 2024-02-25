@@ -1,0 +1,13 @@
+{
+  "cmd": "alter_object",
+  "params": {
+    "filter": {
+      "class": "Dc",
+      "dc_name": "tableau_cnb_decklight"
+    },
+    "action": {
+      "dc_state": "ON"
+    }
+  },
+  "callback_id": 10
+}

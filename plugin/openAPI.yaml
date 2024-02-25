@@ -1,0 +1,68 @@
+openapi: 3.0.0
+info:
+  version: 0.0.1
+  title: ScheiberK
+  license:
+    name: ISC
+paths:
+  '/lights':
+    post:
+      tags: []
+      description: set the state of lights
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                filter:
+                  required: true
+                  type: object
+                  properties:
+                    light_group:
+                      type: string
+                      example: cabine_C60
+                action:
+                  type: object
+                  properties:
+                    is_light_on:
+                      type: boolean
+                    dimming_value:
+                      type: integer
+                      example: 40
+      responses:
+        '200':
+          properties:
+            result: string
+
+  '/dc':
+    post:
+      tags: []
+      description: set the state of dc switches
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                filter:
+                  required: true
+                  type: object
+                  properties:
+                    dc_name:
+                      type: string
+                      example: tableau_cnb_anchorlight
+                action:
+                  type: object
+                  properties:
+                    dc_state:
+                      type: string
+                      enum:
+                        - ON
+                        - OFF
+      responses:
+        '200':
+          properties:
+            result: string

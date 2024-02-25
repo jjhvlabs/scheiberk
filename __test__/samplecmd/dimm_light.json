@@ -1,0 +1,15 @@
+{
+  "cmd": "alter_object",
+  "params": {
+    "filter": {
+      "class": "Light",
+      "is_light_on": true,
+      "light_group": "cabine_C60"
+    },
+    "action": {
+      "is_light_on": true,
+      "dimming_value": 51
+    }
+  },
+  "callback_id": 22
+}

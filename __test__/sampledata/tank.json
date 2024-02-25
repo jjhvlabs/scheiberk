@@ -1,0 +1,12 @@
+{
+  "class": "Tank",
+  "is_alived": true,
+  "module_name": "EG_1",
+  "obj_kind": "Tank",
+  "tank_auto_switch_mode": false,
+  "tank_capacity": 100,
+  "tank_level": 16,
+  "tank_module_id": 1416,
+  "tank_type": "EG_1",
+  "tank_valve_state": "CLOSE"
+}

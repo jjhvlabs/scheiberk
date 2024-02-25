@@ -1,0 +1,12 @@
+{
+  "cmd": "alter_object",
+  "params": {
+    "filter": {
+      "class": "Light"
+    },
+    "action": {
+      "is_light_on": false
+    }
+  },
+  "callback_id": 18
+}

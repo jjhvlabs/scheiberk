@@ -1,0 +1,19 @@
+{
+  "class": "Dc",
+  "dc_current": null,
+  "dc_current_enabled": false,
+  "dc_default": "",
+  "dc_enabled": true,
+  "dc_module_id": 1712,
+  "dc_monostable": false,
+  "dc_name": "tableau_cnb_waterpump",
+  "dc_nb_pwm_states": 0,
+  "dc_state": "ON",
+  "dc_switch_off_percent": -1,
+  "dc_tristate": false,
+  "dc_tristate_controllable": false,
+  "dc_virtual": false,
+  "is_alived": true,
+  "module_name": "tableau_cnb_waterpump",
+  "obj_kind": "Dc"
+}

@@ -1,0 +1,11 @@
+{
+  "class": "Light",
+  "dimming_value": 100,
+  "is_alived": true,
+  "is_light_on": true,
+  "light_group": "Bimini_Fly",
+  "light_module_id": 1712,
+  "light_output_id": 3,
+  "module_name": "Bimini_Fly",
+  "obj_kind": "Light"
+}

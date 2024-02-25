@@ -1,0 +1,26 @@
+{
+  "name": "scheiberk",
+  "version": "1.0.0",
+  "type": "commonjs",
+  "description": "switching between scheiber and signalk",
+  "keywords": [
+    "signalk-node-server-plugin",
+    "signalk-category-digital-switching",
+    "nmea",
+    "scheiber"
+  ],
+  "main": "plugin/index.js",
+  "scripts": {
+    "test": "jest",
+    "prettier": "npx prettier --write --ignore-unknown ."
+  },
+  "author": "jjh",
+  "license": "ISC",
+  "dependencies": {
+    "js-yaml": "^4.1.0",
+    "ws": "^8.16.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}

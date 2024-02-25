@@ -1,0 +1,13 @@
+{
+  "cmd": "alter_object",
+  "params": {
+    "filter": {
+      "class": "Light",
+      "light_group": "Bimini_Fly"
+    },
+    "action": {
+      "is_light_on": true
+    }
+  },
+  "callback_id": 17
+}

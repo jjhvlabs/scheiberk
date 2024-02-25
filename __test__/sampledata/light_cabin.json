@@ -1,0 +1,11 @@
+{
+    "class": "Light",
+    "dimming_value": 81,
+    "is_alived": true,
+    "is_light_on": true,
+    "light_group": "cabine_C60",
+    "light_module_id": 1696,
+    "light_output_id": 2,
+    "module_name": "light_cabine6",
+    "obj_kind": "Light"
+}

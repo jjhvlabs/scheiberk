@@ -1,0 +1,11 @@
+{
+  "class": "Light",
+  "dimming_value": 100,
+  "is_alived": true,
+  "is_light_on": false,
+  "light_group": "pont",
+  "light_module_id": 1744,
+  "light_output_id": 0,
+  "module_name": "pont",
+  "obj_kind": "Light"
+}
