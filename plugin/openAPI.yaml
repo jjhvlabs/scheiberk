@@ -34,7 +34,8 @@ paths:
       responses:
         '200':
           properties:
-            result: string
+            result: boolean
+            reason: string
 
   '/dc':
     post:
