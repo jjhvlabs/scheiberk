@@ -72,7 +72,8 @@ const conversions = {
   },
 
   Light: msg => {
-    const pathPrefix = `lights.${msg.light_module_id}`
+    //module_is not unique for DC and Light, so using name:
+    const pathPrefix = `lights.${msg.module_name}`
     return [
       {
         source: {
@@ -89,8 +90,8 @@ const conversions = {
             value: msg.is_light_on ? 1 : 0,
           },
           {
-            path: `${pathPrefix}.name`,
-            value: msg.module_name,
+            path: `${pathPrefix}.group`,
+            value: msg.light_group,
           },
         ],
       },
@@ -98,7 +99,8 @@ const conversions = {
   },
 
   Dc: msg => {
-    const pathPrefix = `electrical.switches.dc.${msg.dc_module_id}`
+    //module_is not unique for DC and Light, so using name:
+    const pathPrefix = `electrical.switches.dc.${msg.module_name}`
     return [
       {
         source: {
@@ -116,7 +118,7 @@ const conversions = {
           },
           {
             path: `${pathPrefix}.name`,
-            value: msg.module_name,
+            value: msg.dc_name,
           },
         ],
       },
