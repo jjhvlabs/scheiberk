@@ -4,6 +4,40 @@ module.exports = {
   onCallbackMsg,
 }
 
+
+function sendLightCmd(ws, params,onCallbackMsg) {
+  ws.send(
+    JSON.stringify({
+      cmd: 'alter_object',
+      params: {
+        ...params,
+        filter: {
+          ...params.filter,
+          class: 'Light',
+        },
+      },
+      callback_id: getNewCallbackId(onCallbackMsg),
+    }),
+  )
+}
+function sendDcCmd(ws, params,onCallbackMsg) {
+  ws.send(
+    JSON.stringify({
+      cmd: 'alter_object',
+      params: {
+        ...params,
+        filter: {
+          ...params.filter,
+          class: 'Dc',
+        },
+      },
+      callback_id: getNewCallbackId(onCallbackMsg),
+    }),
+  )
+}
+
+
+
 let callbackId = 0
 const callbacks = {}
 
@@ -16,50 +50,20 @@ function onCallbackMsg(msg) {
   }
 }
   
+function getNewCallbackId(callback) {
+  const _callBackId = callbackId++
+  callbacks[_callBackId] = callback
+  timeoutCmd(_callBackId)
+  return _callBackId
 
-function sendLightCmd(ws, params,onCallbackMsg) {
-  const _callBackId = callbackId++
-  callbacks[_callBackId] = onCallbackMsg
-  timeoutCmd(_callBackId)
-  ws.send(
-    JSON.stringify({
-      cmd: 'alter_object',
-      params: {
-        ...params,
-        filter: {
-          ...params.filter,
-          class: 'Light',
-        },
-      },
-      callback_id: _callBackId,
-    }),
-  )
-}
-function sendDcCmd(ws, params,onCallbackMsg) {
-  const _callBackId = callbackId++
-  callbacks[_callBackId] = onCallbackMsg
-  timeoutCmd(_callBackId)
-  ws.send(
-    JSON.stringify({
-      cmd: 'alter_object',
-      params: {
-        ...params,
-        filter: {
-          ...params.filter,
-          class: 'Dc',
-        },
-      },
-      callback_id: _callBackId,
-    }),
-  )
 }
 
-function timeoutCmd(callbackId) {
+function timeoutCmd(_callbackId) {
   setTimeout(() => {
-    const callback = callbacks[callbackId]
+    const callback = callbacks[_callbackId]
     if (callback) {
       callback({result: false,reason:'no response'})
-      delete callbacks[callbackId]
+      delete callbacks[_callbackId]
     }
   }, 5000)
 }
