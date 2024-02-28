@@ -56,7 +56,7 @@ const conversions = {
         values: [
           {
             path: `${pathPrefix}.capacity`,
-            value: (msg.tank_capacity ?? 0) / 1000,
+            value: (msg.tank_capacity ?? 0) / 100,
           },
           {
             path: `${pathPrefix}.currentLevel`,
@@ -83,7 +83,7 @@ const conversions = {
         values: [
           {
             path: `${pathPrefix}.dimmingLevel`,
-            value: (msg.dimming_value ?? 0) / 1000,
+            value: (msg.dimming_value ?? 0) / 100,
           },
           {
             path: `${pathPrefix}.state`,

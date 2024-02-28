@@ -6,7 +6,7 @@ info:
     name: ISC
 paths:
   '/lights':
-    post:
+    put:
       tags: []
       description: set the state of lights
       requestBody:
@@ -38,7 +38,7 @@ paths:
             reason: string
 
   '/dc':
-    post:
+    put:
       tags: []
       description: set the state of dc switches
       requestBody:

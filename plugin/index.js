@@ -46,10 +46,10 @@ module.exports = app => {
       },
     },
     registerWithRouter: router => {
-      router.post('/lights', (req, res) => {
+      router.put('/lights', (req, res) => {
         sendLightCmd(ws, req.body,result=>res.send(JSON.stringify(result)))
       })
-      router.post('/dc', (req, res) => {
+      router.put('/dc', (req, res) => {
         sendDcCmd(ws, req.body,result=>res.send(JSON.stringify(result)))
       })
     },
