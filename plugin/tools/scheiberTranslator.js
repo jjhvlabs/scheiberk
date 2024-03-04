@@ -128,7 +128,7 @@ const conversions = {
 
 function getTankType(msg) {
   if (msg.tank_type.startsWith('EG_')) return 'grayWater' //=eau grise
-  if (msg.tank_type.startsWith('EF_')) return 'freshWater' //=eau fraiche
+  if (msg.tank_type.startsWith('EP_')) return 'freshWater'
   //freshWater
   return 'fuel'
 }
