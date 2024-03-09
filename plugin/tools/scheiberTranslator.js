@@ -10,8 +10,9 @@ function translate(scheiberMsg) {
 
 const conversions = {
   //https://github.com/SignalK/signalk-to-nmea2000/blob/master/conversions/battery.js
+  //module_id is not unique, so using name:
   Battery: msg => {
-    const pathPrefix = `electrical.batteries.${msg.battery_module_id}`
+    const pathPrefix = `electrical.batteries.${msg.module_name}`
     return [
       {
         source: {
@@ -46,7 +47,7 @@ const conversions = {
 
   Tank: msg => {
     const type = getTankType(msg)
-    const pathPrefix = `tanks.${type}.${msg.tank_module_id}`
+    const pathPrefix = `tanks.${type}.${msg.tank_module_name}`
     return [
       {
         source: {
@@ -72,7 +73,6 @@ const conversions = {
   },
 
   Light: msg => {
-    //module_is not unique for DC and Light, so using name:
     const pathPrefix = `lights.${msg.module_name}`
     return [
       {
@@ -99,7 +99,6 @@ const conversions = {
   },
 
   Dc: msg => {
-    //module_is not unique for DC and Light, so using name:
     const pathPrefix = `electrical.switches.dc.${msg.module_name}`
     return [
       {
