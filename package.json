@@ -1,6 +1,6 @@
 {
   "name": "scheiberk",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "type": "commonjs",
   "homepage": "https://github.com/jjhvlabs/scheiberk",
   "description": "switching between scheiber and signalk",

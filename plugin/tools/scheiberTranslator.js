@@ -47,7 +47,7 @@ const conversions = {
 
   Tank: msg => {
     const type = getTankType(msg)
-    const pathPrefix = `tanks.${type}.${msg.tank_module_name}`
+    const pathPrefix = `tanks.${type}.${msg.module_name}`
     return [
       {
         source: {
