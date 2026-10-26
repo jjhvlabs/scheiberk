@@ -126,8 +126,9 @@ const conversions = {
 }
 
 function getTankType(msg) {
-  if (msg.tank_type.startsWith('EG_')) return 'grayWater' //=eau grise
-  if (msg.tank_type.startsWith('EP_')) return 'freshWater'
-  //freshWater
+  const t = String(msg.tank_type || msg.module_name || '').toLowerCase()
+  if (t.startsWith('eg_') || /grey|gray|grise|waste/.test(t)) return 'wasteWater'
+  if (t.startsWith('en_') || /black|noire/.test(t)) return 'blackWater'
+  if (t.startsWith('ep_') || /water|eau|potable/.test(t)) return 'freshWater'
   return 'fuel'
 }
